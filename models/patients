@@ -1,0 +1,62 @@
+const mongoose = require("mongoose");
+
+
+const patientSchema = new mongoose.Schema({
+    _id: {
+        type: String,
+        default: mongoose.Types.ObjectId, // Use ObjectId as the default value for _id
+    },
+    name: {
+        type : String,
+        unique : true,
+        
+    },
+
+    email : {
+        type : String,
+        required : true,
+    },
+    username: {
+        type: String
+    }
+    ,
+    password: {
+        type: String
+    },
+    phone: {
+        type: Number
+    },
+    gender: {
+        type: String
+    },
+    age: {
+        type: Number
+    },
+    blood: {
+        type: String
+    },
+    address: {
+        type: String
+    },
+    emergencyP: {
+        type: String
+    },
+    emergencycont: {
+        type: Number
+    },
+    Disease: {
+        type: String
+    },
+    Allergies: {
+        type: String
+    },
+
+
+    
+})
+
+
+const Patient = mongoose.model("Patient",patientSchema);
+
+
+module.exports = Patient;
